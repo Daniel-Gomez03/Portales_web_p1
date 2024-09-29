@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+
+<body>
+    <h1>Formularios en HTML</h1>
+    <form action="forms.html" method="get">
+        <label for="txtNombre">Nombre</label>
+        <input id="txtNombre" name="txtName" type="text" placeholder="Nombre Completo">
+        <br>
+        <label for="txtCorreo">Correo</label>
+        <input id="txtCorreo" name="txtEmail" type="text" placeholder="tucorreo@electron.ico">
+        <br>
+        <br>
+        <label><b>Ciudad</b></label>
+        <br>
+        <label for="optTeg">Tegucigalpa</label>
+        <input type="radio" id="optTeg" name="optCiudad" value="TEG" checked>
+        &nbsp;
+        <label for="optSPS">San Pedro Sula</label>
+        <input type="radio" id="optSPS" name="optCiudad" value="SPS">
+        &nbsp;
+        <label for="optCHL">Choluteca</label>
+        <input type="radio" id="optCHL" name="optCiudad" value="CHL">
+        &nbsp;
+        <br>
+        <br>
+        <label for="cmbCiudad">Ciudades 2</label>
+        <select name="cmbCiudad" id="cmbCiudad">
+            <option value="TEG">Tegucigalpa</option>
+            <option value="SPS">San Pedro Sula</option>
+            <option value="CHL">Choluteca</option>
+        </select>
+        <br>
+        <br>
+        <label for="tctLongText">Texto Largo</label><br>
+        <textarea name="txtBio" id="txtLongText" placeholder="Texto muy muy largo"></textarea>
+        <br>
+        <button type="submit" name="brnEnviar">Enviar</button>
+
+    </form>
+</body>
+
+</html>
