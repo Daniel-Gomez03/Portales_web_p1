@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Prestamo Estudiantil</title>
+</head>
+
+<body>
+    <header>
+        <h1>Solicitud de Prestamo Estudiantil</h1>
+    </header>
+
+    <main>
+        <form action="solicitud_prestamo-(Daniel Gomez).html" method="get">
+            <fieldset>
+                <legend>Informacion Personal</legend>
+                <label for="txtNombre"><b>Nombre:</b></label>
+                <input type="text" name="txtname" id="txtNombre" placeholder="Nombre Completo" required
+                    pattern="[a-zA-ZÀ-ÿ\s]{2,100}" title="Por favor, ingrese solo letras.">
+                <br>
+                <br>
+                <label for="txtCorreo"><b>Correo:</b></label>
+                <input type="email" name="txtEmail" id="txtCorreo" placeholder="Correo Electronico" required>
+                <br>
+                <br>
+                <label for="txtTelefono"><b>Número Teléfonico:</b></label>
+                <input type="text" name="txtPhone" id="txtTelefono" placeholder="Número Teléfonico" required
+                    pattern="[0-9]{8}" title="Por favor, ingrese solo números.">
+                <br>
+                <br>
+                <label for="txtDireccion"><b>Dirección actual:</b></label>
+                <input type="text" name="txtAddress" id="txtDireccion" placeholder="Dirección actual" required
+                    pattern="[a-zA-ZÀ-ÿ\s]{2,100}" title="Por favor, ingrese solo letras.">
+                <br>
+                <br>
+                <label for="txtCiudad"><b>Ciudad:</b></label>
+                <input type="text" name="txtCity" id="txtDireccion" placeholder="Ciudad" required
+                    pattern="[a-zA-ZÀ-ÿ\s]{2,100}" title="Por favor, ingrese solo letras.">
+                <br>
+                <br>
+                <label for="txtEstado"><b>Estado:</b></label>
+                <select name="Estado" id="txtEstado">
+                    <option value="select-a">Seleccione una</option checked>
+                    <option value="single">Soltero</option>
+                    <option value="engaged">Comprometido/a</option>
+                    <option value="married">Casado/a</option>
+                    <option value="divorced">Divorciado/a</option>
+                    <option value="widowed">Viudo/a</option>
+                </select>
+                <br>
+                <br>
+                <label for="txtPostal"><b>Código postal</b></label>
+                <input type="text" name="txtZipCode" id="txtPostal" placeholder="Código postal" required
+                    pattern="[0-9]{5}" title="Por favor, ingrese correctamente el código postal ">
+            </fieldset>
+            <fieldset>
+                <legend>Información Académica</legend>
+                <label><b>Nivel de educación actual:</b></label>
+                <br>
+                <label for="optPrepa">Preparatoria</label>
+                <input type="radio" id="optPrepa" name="optLevel" value="Prepa" checked>
+                &nbsp;
+                <label for="optLic">Licenciatura</label>
+                <input type="radio" id="optLic" name="optLevel" value="Lic">
+                &nbsp;
+                <label for="optMaestria">Maestría</label>
+                <input type="radio" id="optMaestria" name="optLevel" value="MA">
+                &nbsp;
+                <label for="optDoc">Doctorado</label>
+                <input type="radio" id="optDoc" name="optLevel" value="Doc">
+                &nbsp;
+                <br>
+                <br>
+                <label><b>Programa de estudio:</b></label>
+                <br>
+                <label for="optComp">Ciencias de la Computación</label>
+                <input type="radio" id="optComp" name="optStudyProgram" value="ICC" checked>
+                &nbsp;
+                <label for="optIng">Ingeniería</label>
+                <input type="radio" id="optIng" name="optStudyProgram" value="ING">
+                &nbsp;
+                <label for="optEco">Economía</label>
+                <input type="radio" id="optEco" name="optStudyProgram" value="ECON">
+                &nbsp;
+                <label for="optArt">Artes</label>
+                <input type="radio" id="optArt" name="optStudyProgram" value="ART">
+                &nbsp;
+                <label for="optOther">Otro</label>
+                <input type="radio" id="optOther" name="optStudyProgram" value="OTRO">
+                &nbsp;
+                <br>
+                <br>
+                <label for="txtMonto"><b>Monto del préstamo solicitado:</b></label>
+                <input type="text" name="txtAmount" id="txtMonto" placeholder="Préstamo solicitado" required
+                    pattern="[0-9]{4,7}" title="Por favor, ingrese solo números.">
+                <br>
+                <br>
+                <label for="txtRazon"><b>Razón para solicitar el préstamo:</b></label><br>
+                <textarea name="txtMotivos" id="txtRazon" placeholder="Razón del préstamo" required></textarea>
+            </fieldset>
+            <br>
+            <button type="submit" name="btnEnviar">Enviar</button>
+        </form>
+    </main>
+</body>
+
+</html>
