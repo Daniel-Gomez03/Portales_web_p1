@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Conferencia sobre la Educación Actual</title>
+</head>
+
+<body>
+    <header>
+        <h1>Conferencia sobre la Educación Actual</h1>
+    </header>
+    <main>
+        <p>
+            Actualmenta la educación actual por su diversidad y enfoque en la inclusión, adaptandose a las necesidades
+            de la sociedad globalizadad y tecnológica. Integrando lo que son métodos tradicionales y modernos, como el
+            aprendizaje en línea y el uso de herramientas digitales, para ofrecer una enseñanza mas accesible y
+            flexible.
+        </p>
+        <p>
+
+            La educación actual está en constante evolución, adaptándose a los cambios tecnológicos y sociales. Uno de
+            los aspectos más relevantes es la inclusión de herramientas digitales en el aula, lo que ha transformado la
+            manera en que los estudiantes aprenden y los docentes enseñan. Plataformas de aprendizaje en línea, clases
+            virtuales y recursos interactivos permiten un acceso más flexible al conocimiento, lo que resulta
+            fundamental en un mundo donde la conectividad global es la norma. Esta transición ha hecho que el
+            aprendizaje sea más accesible para estudiantes de diversas partes del mundo, eliminando barreras geográficas
+            y económicas.
+        </p>
+        <p>
+            Además de la integración tecnológica, la educación contemporánea pone un fuerte énfasis en el desarrollo de
+            habilidades blandas. Estas competencias, como la comunicación efectiva, el pensamiento crítico, la
+            creatividad y la resolución de problemas, son cada vez más demandadas en el mercado laboral. Las escuelas y
+            universidades buscan formar individuos con estas habilidades para que puedan enfrentar los retos del siglo
+            XXI. Esto representa un cambio significativo respecto a los modelos educativos tradicionales, que
+            priorizaban el conocimiento memorístico sobre las capacidades interpersonales y el aprendizaje práctico.
+        </p>
+        <p>
+            Por último, la educación actual también se esfuerza por ser más inclusiva y equitativa. Existen mayores
+            esfuerzos por garantizar que todos los estudiantes, independientemente de su origen socioeconómico, género o
+            capacidades, tengan acceso a una educación de calidad. Las políticas educativas contemporáneas buscan
+            reducir las brechas educativas, promoviendo programas que ofrezcan apoyo a estudiantes en situación de
+            vulnerabilidad. Este enfoque tiene como objetivo construir una sociedad más justa y con igualdad de
+            oportunidades, donde la educación sea un medio para el progreso social y personal.
+        </p>
+        <form action="examen.html" method="get">
+            <fieldset>
+                <legend><b>Responda lo siguiente</b></legend>
+                <label for="Txtnombre"><b>Nombre:</b></label>
+                <input type="text" name="txtname" id="Txtnombre" placeholder="Nombre Completo" required>
+                <br>
+                <br>
+                <label for="TxtCorreo"><b>Correo Electronico:</b></label>
+                <input type="email" name="txtemail" id="Txtcorreo" placeholder="Ejemplo@gmail.com" required>
+                <br>
+                <br>
+                <label for="Txtfecha"><b>Fecha de asistencia:</b></label>
+                <input type="date" name="Date" id="txtfecha" required>
+                <br>
+                <br>
+                <label for="Txtedad"><b>Edad:</b></label>
+                <input type="number" name="age" id="Txtedad" min="18" max="60" required>
+                <br>
+                <br>
+                <label for="Txtinteres"><b>Que le intereso mas de la conferencia:</b></label>
+                <select name="Interes" id="Txtinteres">
+                    <option value="select-a">Seleccione una</option checked>
+                    <option value="tecnologia">Tecnología educativa</option>
+                    <option value="inclusion">Inclusión educativa</option>
+                    <option value="habilidades">Desarrollo de habilidades blandas</option>
+                    <option value="equidad">Equidad en la educación</option>
+                </select>
+                <br>
+                <br>
+                <label for="Txtcomentarios"><b>Que opina sobre la conferencia:</b></label><br>
+                <textarea name="Txtopiniones" id="Txtcomentarios" placeholder="Su opinion acerca de la charla"
+                    required></textarea>
+            </fieldset>
+            <br>
+            <button type="submit" name="btnEnviar">Enviar</button>
+        </form>
+    </main>
+</body>
+
+</html>
