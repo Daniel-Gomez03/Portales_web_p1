@@ -11,21 +11,24 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header h1 {
     margin: 0px;
     margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
     font-size: 1.5rem;
 }
 
 header nav ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
     margin: 0px;
-    margin-right: 1rem;
+    padding: 0px;
 }
 
 header nav ul li a {
@@ -34,6 +37,7 @@ header nav ul li a {
     text-decoration: none;
     color: #ddd;
     transition: background-color 1s ease;
+    border-bottom: 1px solid #bbb;
 }
 
 header nav ul li a:hover {
@@ -95,13 +99,118 @@ main h2 {
     box-shadow: 3px 3px 5px #9004E0;
 }
 
-/*.hero-panel div.cuadrante4 {
-    top: 75%;
-    left: 75%;
+.Precios {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
 }
 
-.hero-panel div.cuadrante2 {
-    top: 25%;
-    left: 75%;
-}*/
+.card {
+    position: relative;
+    border: 1px solid #000;
+    width: 300px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 13px;
+}
 
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.card h3,
+.card p {
+    margin: 0px;
+    padding: 0.5rem;
+}
+
+.card p {
+    font-size: 0.8rem;
+}
+
+.card a {
+    display: block;
+    text-decoration: none;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    background-color: #21890c;
+    color: #333;
+    font-weight: bold;
+}
+
+.card .precio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    top: 200px;
+    right: 1rem;
+    background-color: darkorange;
+    transform: translateY(-50%);
+    font-weight: bold;
+    box-shadow: 1px 1px 10px #a05800;
+}
+
+.card.highlighted {
+    background-color: #21890c;
+}
+
+.card.highlighted a {
+    background-color: #a05800;
+}
+
+@media (min-width:720px) {
+    body {
+        background-color: #134e07;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        padding: 0px;
+        text-align: left;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        margin-right: 1rem;
+    }
+
+    header nav ul li a {
+        border: none;
+    }
+
+    .Precios {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .Precios .card:nth-child(1),
+    .Precios .card:nth-child(3) {
+        transform: scale(0.8) translateY(15%);
+    }
+    
+    .Precios .card:hover {
+        transform: scale(1.1);
+    }
+}
+
+@media (min-width:1025px) {
+    body {
+        background-color: #651900;
+    }
+}
