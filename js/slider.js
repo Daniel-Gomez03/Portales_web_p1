@@ -1,3 +1,4 @@
+
 class SliderController {
     slider;
     framestrack;
@@ -7,7 +8,7 @@ class SliderController {
     currentSlideIndex = -1;
     slideDirection = 1; // -1 1
 
-    constructor() {
+    constructor(){
         this.slider = document.querySelector('.slider');
         this.framestrack = document.querySelector('.framestrack');
         this.slides = [...document.querySelectorAll('.slide')];
@@ -15,27 +16,68 @@ class SliderController {
             "slides": this.slides,
             "framestrack": this.framestrack,
         });
+        this.generateUI();
         this.moveSlideTo(0);
     }
 
-    moveSlideTo(slideIndex) {
-        if (this.timeIntervalId) {
+    moveSlideTo(slideIndex){
+        if(this.timeIntervalId){
             clearTimeout(this.timeIntervalId);
         }
         this.currentSlideIndex = slideIndex;
-        this.framestrack.style.left = `-${this.currentSlideIndex * 100}vw`;
+        this.framestrack.style.left = `-${this.currentSlideIndex*100}vw`;
         this.tick();
     }
-    tick() {
+    moveNext(){
+        if(this.currentSlideIndex + this.slideDirection >= this.slides.length ||
+            this.currentSlideIndex + this.slideDirection < 0 ) {
+            this.slideDirection *= -1;
+        }
+        this.moveSlideTo(this.currentSlideIndex + this.slideDirection);
+    }
+    tick(){
         this.timeIntervalId = setTimeout(
-            () => {
-                console.log("Interval: entered");
-                if (this.currentSlideIndex + this.slideDirection >= this.slides.length ||
-                    this.currentSlideIndex + this.slideDirection < 0) {
-                    this.slideDirection *= -1;
-                }
-                this.moveSlideTo(this.currentSlideIndex + this.slideDirection);
+            ()=>{
+                this.moveNext();
             }, this.timeInterval
         );
+    }
+    generateUI(){
+        const btnLeft = document.createElement("DIV");
+        const btnRight = document.createElement("DIV");
+        btnLeft.classList.add('btnLeft');
+        btnRight.classList.add('btnRight');
+        btnLeft.innerHTML = '&lt;'; // <
+        btnRight.innerHTML = '&gt;'; // >
+
+        btnLeft.addEventListener('click' , (e)=>{
+            this.slideDirection = -1;
+            this.moveNext();
+        });
+        btnRight.addEventListener('click' , (e)=>{
+            this.slideDirection = 1;
+            this.moveNext();
+        });
+        this.slider.appendChild(btnLeft);
+        this.slider.appendChild(btnRight);
+
+        const navigator = document.createElement("DIV");
+        navigator.classList.add("navigator");
+
+        this.slides.forEach( (slide, i)=>{
+            const btnNavigateTo = document.createElement("DIV");
+            btnNavigateTo.classList.add("btnNavigateTo");
+            btnNavigateTo.addEventListener("click", (e)=>{
+                e.preventDefault();
+                e.stopPropagation();
+                this.moveSlideTo(i);
+            });
+            navigator.appendChild(btnNavigateTo);
+        });
+        this.slider.appendChild(navigator);
+
+        /*btnLeft.addEventListener('click' , function (e) {
+            this.slideDirection = -1;
+        })*/
     }
 }

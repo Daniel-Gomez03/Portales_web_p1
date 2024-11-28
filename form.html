@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/validacion.js"></script>
+    <title>Formulario</title>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Formulario de inscripción</h1>
+    </header>
+
+    <main>
+        <form id="formulario" action="form.html" method="get">
+            <fieldset>
+                <legend>Información Personal</legend>
+
+                <label for="txtNombre"><b>Nombre:</b></label>
+                <input class="input-required" type="text" name="txtname" id="txtNombre" placeholder="Nombre Completo" required
+                    pattern="[a-zA-ZÀ-ÿ\s]{2,100}" title="Por favor, ingrese solo letras.">
+                <span id="errorNombre" class="error-message"></span>
+                <br><br>
+
+                <label for="txtCorreo"><b>Correo:</b></label>
+                <input class="input-required" type="email" name="txtEmail" id="txtCorreo" placeholder="Correo Electrónico" required>
+                <span id="errorCorreo" class="error-message"></span>
+                <br><br>
+
+                <label for="txtTelefono"><b>Número Telefónico:</b></label>
+                <input class="input-required" type="text" name="txtPhone" id="txtTelefono" placeholder="Número Telefónico" required
+                    pattern="^[389]\d{7}$" title="El número debe iniciar con 3, 8 o 9 y tener 8 dígitos.">
+                <span id="errorTelefono" class="error-message"></span>
+                <br><br>
+
+                <label for="txtDireccion"><b>Dirección actual:</b></label>
+                <input class="input-required" type="text" name="txtAddress" id="txtDireccion" placeholder="Dirección actual" required>
+                <span id="errorDireccion" class="error-message"></span> 
+                <br><br>
+
+                <label for="txtCiudad"><b>Ciudad:</b></label>
+                <input class="input-required" type="text" name="txtCity" id="txtCiudad" placeholder="Ciudad" required>
+                <span id="errorCiudad" class="error-message"></span> 
+                <br><br>
+
+                <label for="txtEstado"><b>Estado:</b></label>
+                <select class="input-required" name="Estado" id="txtEstado" required>
+                    <option value="">Seleccione una</option>
+                    <option value="single">Soltero</option>
+                    <option value="engaged">Comprometido/a</option>
+                    <option value="married">Casado/a</option>
+                    <option value="divorced">Divorciado/a</option>
+                    <option value="widowed">Viudo/a</option>
+                </select>
+                <span id="errorEstado" class="error-message"></span> 
+            </fieldset>
+            <br>
+            <button type="submit" name="btnEnviar">Enviar</button>
+        </form>
+    </main>
+</body>
+
+</html>
